@@ -1,2 +1,2 @@
-# calculator
-Simple Calculator
+# CALCULATOR
+# Only Simple Calculator in PHP
