@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/boxydesigns.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/side.css" type="text/css" media="all">
     <link rel="stylesheet" href="css/animate.css" type="text/css" media="all">
-    <link rel="icon" href="https://pngimage.net/wp-content/uploads/2018/06/white-ball-png-4.png" type="image/png">
+    <link rel="icon" href="https://pngimage.net/wp-content/uploads/2018/06/white-ball-png-4.png" type="image/png"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 
@@ -63,9 +63,25 @@
                                 <br><br>
                                 <input type="num2" class="form-control btn-warning input-md" id="num2" placeholder="Segundo Numero:" name="num2" style="background-color: #1B1B1D; color: #bdc3c7; width:85%; border: none; text-align: center;" required="">
                                 <br><br>
+                                <?php
 
-                                <input type="num3" class="form-control btn-warning input-md" id="num3" placeholder="Operação:" name="num3" style="background-color: #1B1B1D; color: #bdc3c7; width:85%; border: none; text-align: center;" required="">
+                                $a = $_POST['num1'];
+                                $b = $_POST['num2'];
+                                $op = $_POST['operacao'];
 
+                                if (!empty($op)) {
+                                    if ($op == '+')
+                                        $c = $a + $b;
+                                    else if ($op == '-')
+                                        $c = $a - $b;
+                                    else if ($op == '*')
+                                        $c = $a * $b;
+                                    else
+                                        $c = $a / $b;
+
+                                    echo "O resultado da operação é: $c";
+                                }
+                                ?>
                                 <br><br>
                                 <input type="submit" name="operacao" value="+">
                                 <input type="submit" name="operacao" value="-">
@@ -148,25 +164,6 @@
             });
         </script>
     </footer>
-    <?php
-
-    $a = $_POST['num1'];
-    $b = $_POST['num2'];
-    $op = $_POST['operacao'];
-
-    if (!empty($op)) {
-        if ($op == '+')
-            $c = $a + $b;
-        else if ($op == '-')
-            $c = $a - $b;
-        else if ($op == '*')
-            $c = $a * $b;
-        else
-            $c = $a / $b;
-
-        echo "O resultado da operação é: $c";
-    }
-    ?>
 
 </body>
 
